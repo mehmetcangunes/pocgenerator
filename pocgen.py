@@ -1,3 +1,4 @@
+#! /usr/bin/env python
 print("""
 C4N POC GENERATOR | CORS -CLICKJACKING
      #telegram: c4nnn"
@@ -56,5 +57,6 @@ elif(input1==2):
      """% (input2))
     dosya = open("cors.html", "w")
     dosya.write(poc)
-
+else:
+    print("Lütfen 1 veya 2 yazınız.")
 
