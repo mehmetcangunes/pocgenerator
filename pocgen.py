@@ -4,17 +4,29 @@ C4N POC GENERATOR | CORS -CLICKJACKING
      #telegram: c4nnn"
 """)
 
-input1= int(input("""
+# Colors
+HEADER = '\033[95m'
+OKBLUE = '\033[94m'
+OKGREEN = '\033[92m'
+WARNING = '\033[93m'
+FAIL = '\033[91m'
+ENDC = '\033[0m'
+BOLD = '\033[1m'
+UNDERLINE = '\033[4m'
+
+
+input1= int(input(OKBLUE+"""
 1-ClickJacking Poc Generator
 2-CORS Poc Generator
 Hangisini seçmek istersiniz ? 
 """))
 
 if(input1==1):
-    print ("Clickjacking | c4n")
+    print (OKBLUE+"Clickjacking | c4n")
     input2= input("hedef site giriniz: ")
     height = input("Bir genişlik giriniz: ")
     widht = input("Bir uzunluk giriniz: ")
+    print (OKGREEN+"[+] POC Başarıyla oluşturuldu. ")
 
     poc = ("""
     <html>
@@ -27,7 +39,7 @@ if(input1==1):
     dosya.write(poc)
 
 elif(input1==2):
-    print("CORS | c4n")
+    print(OKBLUE+"CORS | c4n")
     input2 = input("hedef site giriniz: ")
     print('%s' % (input2))
     poc = ("""
@@ -57,6 +69,7 @@ elif(input1==2):
      """% (input2))
     dosya = open("cors.html", "w")
     dosya.write(poc)
+    print (BOLD+"[+] POC Başarıyla oluşturuldu. ")
 else:
     print("Lütfen 1 veya 2 yazınız.")
 
