@@ -13,16 +13,16 @@ Hangisini seçmek istersiniz ?
 if(input1==1):
     print ("Clickjacking | c4n")
     input2= input("hedef site giriniz: ")
-    height = input("Bir uzunluk giriniz: ")
-    widht = input("Bir genişlik giriniz: ")
+    height = input("Bir genişlik giriniz: ")
+    widht = input("Bir uzunluk giriniz: ")
 
     poc = ("""
     <html>
     <!-- POC GENERATOR BY C4N -->
     <title>PoC generator</title>
-    <iframe src="{}" height="{}"  widht="{}" />
+  <iframe src="{}"  width="{}" height="{}"/>
     </html>
-    """).format(input2, height, widht)
+    """).format(input2,height,widht)
     dosya = open("clickjacking.html", "w")
     dosya.write(poc)
 
